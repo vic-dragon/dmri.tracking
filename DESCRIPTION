@@ -3,7 +3,7 @@ Type: Package
 Title: Tracking algorithm from DiST 
 Version: 0.1.0
 Authors@R: person("Seungyong", "Hwang", email="syhwang@ucdavis.edu", role=c("aut", "cre"))
-          person("Jie", "Peng", email="jiepeng@ucdavis.edu", role=c("aut", "cre"))
+Authors@R: person("Jie", "Peng", email="jiepeng@ucdavis.edu", role=c("aut", "cre"))
 Description: This package is mainly for making tractography with deterministic tracking algorithm from Raymond et al. 2016
 License: What license is it under?
 Encoding: UTF-8
