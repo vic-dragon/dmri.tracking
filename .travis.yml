@@ -7,5 +7,7 @@ disable_homebrew: true
 os:
   - linux
   - osx
-after_success:
-  - Rscript -e 'covr::codecov(type = "all")'
+matrix:
+  include:
+    - os: osx
+    - osx_image: xcode12.2
