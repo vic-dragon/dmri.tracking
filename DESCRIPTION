@@ -10,3 +10,10 @@ LazyData: true
 Imports: rgl
 RoxygenNote: 7.1.1
 Depends: R (>= 3.5.0)
+Suggests: 
+    rmarkdown,
+    knitr,
+    testthat (>= 3.0.0),
+    covr
+Config/testthat/edition: 3
+VignetteBuilder: knitr
