@@ -7,4 +7,4 @@ disable_homebrew: true
 os:
   - linux
   - osx
-osx_image: xcode12.2
+osx_image: xcode11
