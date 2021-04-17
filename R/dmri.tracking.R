@@ -66,7 +66,7 @@
 #' load(system.file("extdata", "peakresult.rda", package = "dmri.tracking"))
 #' peak.result  #Output from the peak detection algorithm
 #'
-#' result = v.track(v.obj = peak.result, max.line=500, nproj=1, elim=T, elim.thres=1, thres.ang=0.5235988)
+#' result = v.track(v.obj = peak.result, max.line=500)
 #' @export
 v.track <- function(v.obj, max.line=100, nproj=1, elim=T, elim.thres=1, thres.ang=0.5235988){
 
@@ -473,7 +473,6 @@ proceed <- function(vox0, dir0, eig, rmap, n.fiber, thres.ang=0.5235988){
 #'
 #' @param loc The list of voxel coordinates that the selected reconstructed fiber went through
 #' @param vec The list of diffusion direction that used to reconstruct a fiber
-#' @param ... others
 #'
 #' @examples
 #' #Load example output from peak detection algorithm
@@ -482,8 +481,9 @@ proceed <- function(vox0, dir0, eig, rmap, n.fiber, thres.ang=0.5235988){
 #' peak.result  #Output from the peak detection algorithm
 #'
 #' #Apply Tracking algorithm
-#' result = v.track(v.obj = peak.result, max.line=500, nproj=1, elim=T, elim.thres=1, thres.ang=0.5235988)
+#' result = v.track(v.obj = peak.result, max.line=500)
 #'
+#' library(rgl)
 #' open3d()
 #' for (iind in (result$sorted.iinds[result$sorted.update.ind])){
 #'  cat(iind,"\n")
@@ -492,8 +492,12 @@ proceed <- function(vox0, dir0, eig, rmap, n.fiber, thres.ang=0.5235988){
 #' }
 #' @export
 #'
-tractography <- function(loc, vec, x_lim=NULL, y_lim=NULL, z_lim=NULL)
+tractography <- function(loc, vec)
 {
+  x_lim=NULL
+  y_lim=NULL
+  z_lim=NULL
+
   if(is.null(x_lim)&&is.null(y_lim)&&is.null(z_lim)){
     # repeat location for get color for each line segment
     loc1 <- matrix(rep(loc, each=2), ncol=3)

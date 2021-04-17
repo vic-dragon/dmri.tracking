@@ -4,17 +4,15 @@
 \alias{tractography}
 \title{Tractography}
 \usage{
-tractography(loc, vec, x_lim = NULL, y_lim = NULL, z_lim = NULL)
+tractography(loc, vec)
 }
 \arguments{
 \item{loc}{The list of voxel coordinates that the selected reconstructed fiber went through}
 
 \item{vec}{The list of diffusion direction that used to reconstruct a fiber}
-
-\item{...}{others}
 }
 \description{
-Visualize the result rom v.track into 3D object.
+Visualize the result from v.track into 3D object.
 rgl package is required.
 }
 \examples{
@@ -24,8 +22,9 @@ load(system.file("extdata", "peakresult.rda", package = "dmri.tracking"))
 peak.result  #Output from the peak detection algorithm
 
 #Apply Tracking algorithm
-result = v.track(v.obj = peak.result, max.line=500, nproj=1, elim=T, elim.thres=1, thres.ang=0.5235988)
+result = v.track(v.obj = peak.result, max.line=500)
 
+library(rgl)
 open3d()
 for (iind in (result$sorted.iinds[result$sorted.update.ind])){
  cat(iind,"\n")

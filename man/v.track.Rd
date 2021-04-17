@@ -66,5 +66,5 @@ v.track applies the deterministic tracking algorithm, DiST, to reconstruct neuro
 load(system.file("extdata", "peakresult.rda", package = "dmri.tracking"))
 peak.result  #Output from the peak detection algorithm
 
-result = v.track(v.obj = peak.result, max.line=500, nproj=1, elim=T, elim.thres=1, thres.ang=0.5235988)
+result = v.track(v.obj = peak.result, max.line=500)
 }
