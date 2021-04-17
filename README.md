@@ -7,6 +7,8 @@
 
 [![Travis build
 status](https://travis-ci.com/vic-dragon/dmri.tracking.svg?branch=main)](https://travis-ci.com/vic-dragon/dmri.tracking)
+[![AppVeyor build
+status](https://ci.appveyor.com/api/projects/status/github/vic-dragon/dmri.tracking?branch=main&svg=true)](https://ci.appveyor.com/project/vic-dragon/dmri.tracking)
 <!-- badges: end -->
 
 The goal of dmri.tracking is to apply the deterministic tracking
@@ -15,8 +17,7 @@ result.
 
 ## Installation
 
-You can install the released version of dmri.tracking from
-[CRAN](https://CRAN.R-project.org) with:
+You can install the released version of dmri.tracking with:
 
 ``` r
 install.packages("dmri.tracking")

@@ -17,6 +17,7 @@ knitr::opts_chunk$set(
 
 <!-- badges: start -->
 [![Travis build status](https://travis-ci.com/vic-dragon/dmri.tracking.svg?branch=main)](https://travis-ci.com/vic-dragon/dmri.tracking)
+[![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/vic-dragon/dmri.tracking?branch=main&svg=true)](https://ci.appveyor.com/project/vic-dragon/dmri.tracking)
 <!-- badges: end -->
 
 The goal of dmri.tracking is to apply the deterministic tracking algorithm from DiST  (Raymond et al. 2016) and to visualize the tracking result.
