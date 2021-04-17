@@ -23,7 +23,7 @@ The goal of dmri.tracking is to apply the deterministic tracking algorithm from 
 
 ## Installation
 
-You can install the released version of dmri.tracking from [CRAN](https://CRAN.R-project.org) with:
+You can install the released version of dmri.tracking  with:
 
 ``` r
 install.packages("dmri.tracking")

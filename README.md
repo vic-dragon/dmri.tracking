@@ -5,6 +5,8 @@
 
 <!-- badges: start -->
 
+[![Travis build
+status](https://travis-ci.com/vic-dragon/dmri.tracking.svg?branch=main)](https://travis-ci.com/vic-dragon/dmri.tracking)
 <!-- badges: end -->
 
 The goal of dmri.tracking is to apply the deterministic tracking
