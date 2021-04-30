@@ -21,9 +21,10 @@
 
 # vorient: if the voxel orientation does not match the physical orientation, make it -1
 
-#' Deterministic tracking algorithm from DiST by Raymond et al.(2016)
+#' Deterministic tracking algorithm from DiST by Wong et al.(2016)
 #'
 #' v.track applies the deterministic tracking algorithm, DiST, to reconstruct neuronal fibers based on the peak detection results.
+#' Peak detection algorithm can be found in (github.com/vic-dragon/BJS/example_scripts/example_HCP_analysis.py)
 #'
 #' @param v.obj The list type of object from the peak detection algorithm. The object should contain the following components.
 #' \itemize{
@@ -476,20 +477,20 @@ proceed <- function(vox0, dir0, eig, rmap, n.fiber, thres.ang=0.5235988){
 #'
 #' @examples
 #' #Load example output from peak detection algorithm
-#' #load(system.file("extdata", "peakresult.rda", package = "dmri.tracking"))
+#' load(system.file("extdata", "peakresult.rda", package = "dmri.tracking"))
 #'
 #' #peak.result  #Output from the peak detection algorithm
 #'
 #' #Apply Tracking algorithm
-#' #result = v.track(v.obj = peak.result, max.line=500)
+#' result = v.track(v.obj = peak.result, max.line=500)
 #'
-#' #library(rgl)
-#' #open3d()
-#' #for (iind in (result$sorted.iinds[result$sorted.update.ind])){
-#' #  cat(iind,"\n")
-#' #  tractography(result$tracks1[[iind]]$inloc, result$tracks1[[iind]]$dir)
-#' #  tractography(result$tracks2[[iind]]$inloc, result$tracks2[[iind]]$dir)
-#' # }
+#' library(rgl)
+#' open3d()
+#' for (iind in (result$sorted.iinds[result$sorted.update.ind])){
+#'   cat(iind,"\n")
+#'   tractography(result$tracks1[[iind]]$inloc, result$tracks1[[iind]]$dir)
+#'   tractography(result$tracks2[[iind]]$inloc, result$tracks2[[iind]]$dir)
+#' }
 #' @export
 #'
 tractography <- function(loc, vec)

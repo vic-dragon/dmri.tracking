@@ -2,7 +2,7 @@
 % Please edit documentation in R/dmri.tracking.R
 \name{v.track}
 \alias{v.track}
-\title{Deterministic tracking algorithm from DiST by Raymond et al.(2016)}
+\title{Deterministic tracking algorithm from DiST by Wong et al.(2016)}
 \usage{
 v.track(
   v.obj,
@@ -61,6 +61,7 @@ Result of deterministic tracking algorithm
 }
 \description{
 v.track applies the deterministic tracking algorithm, DiST, to reconstruct neuronal fibers based on the peak detection results.
+Peak detection algorithm can be found in (github.com/vic-dragon/BJS/example_scripts/example_HCP_analysis.py)
 }
 \examples{
 load(system.file("extdata", "peakresult.rda", package = "dmri.tracking"))
