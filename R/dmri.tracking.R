@@ -490,7 +490,7 @@ proceed <- function(vox0, dir0, eig, rmap, n.fiber, thres.ang=0.5235988){
 #' #  cat(iind,"\n")
 #' #  tractography(result$tracks1[[iind]]$inloc, result$tracks1[[iind]]$dir)
 #' #  tractography(result$tracks2[[iind]]$inloc, result$tracks2[[iind]]$dir)
-#' #}
+#' ##}
 #' @export
 #'
 tractography <- function(loc, vec)
