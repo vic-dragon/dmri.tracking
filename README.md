@@ -9,10 +9,6 @@
 status](https://travis-ci.com/vic-dragon/dmri.tracking.svg?branch=main)](https://travis-ci.com/vic-dragon/dmri.tracking)
 [![AppVeyor build
 status](https://ci.appveyor.com/api/projects/status/github/vic-dragon/dmri.tracking?branch=main&svg=true)](https://ci.appveyor.com/project/vic-dragon/dmri.tracking)
-[![Coveralls test
-coverage](https://coveralls.io/repos/github/vic-dragon/dmri.tracking/badge.svg)](https://coveralls.io/r/vic-dragon/dmri.tracking?branch=main)
-[![Codecov test
-coverage](https://codecov.io/gh/vic-dragon/dmri.tracking/branch/main/graph/badge.svg)](https://codecov.io/gh/vic-dragon/dmri.tracking?branch=main)
 <!-- badges: end -->
 
 The goal of dmri.tracking is to apply the deterministic tracking
