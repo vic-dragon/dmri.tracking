@@ -64,8 +64,29 @@ v.track applies the deterministic tracking algorithm, DiST, to reconstruct neuro
 Peak detection algorithm can be found in (github.com/vic-dragon/BJS/example_scripts/example_HCP_analysis.py)
 }
 \examples{
-load(system.file("extdata", "peakresult.rda", package = "dmri.tracking"))
-peak.result  #Output from the peak detection algorithm
+#Load example output from peak detection algorithm
+#load(system.file("extdata", "peakresult.rda", package = "dmri.tracking"))
 
-result = v.track(v.obj = peak.result, max.line=500)
+#str(peak.result)  #Output from the peak detection algorithm
+
+#Apply Tracking algorithm
+#result = v.track(v.obj = peak.result, max.line=500)
+
+
+#To plot the tractography based on the previous tracking result,
+#comment out the following lines and run them.
+
+#library(rgl)
+#open3d()
+#for (iind in (result$sorted.iinds[result$sorted.update.ind])){
+#  cat(iind,"\n")
+#  tractography(result$tracks1[[iind]]$inloc, result$tracks1[[iind]]$dir)
+#  tractography(result$tracks2[[iind]]$inloc, result$tracks2[[iind]]$dir)
+#}
+
+#More detailed procedure is available in (https://github.com/vic-dragon/dmri.tracking)
+
+}
+\seealso{
+[tractography()] for plotting tractography based on the tracking result from [v.track()]
 }

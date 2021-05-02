@@ -19,10 +19,14 @@ rgl package is required.
 #Load example output from peak detection algorithm
 #load(system.file("extdata", "peakresult.rda", package = "dmri.tracking"))
 
-#peak.result  #Output from the peak detection algorithm
+#str(peak.result)  #Output from the peak detection algorithm
 
 #Apply Tracking algorithm
 #result = v.track(v.obj = peak.result, max.line=500)
+
+
+#To plot the tractography based on the previous tracking result,
+#comment out the following lines and run them.
 
 #library(rgl)
 #open3d()
@@ -30,5 +34,11 @@ rgl package is required.
 #  cat(iind,"\n")
 #  tractography(result$tracks1[[iind]]$inloc, result$tracks1[[iind]]$dir)
 #  tractography(result$tracks2[[iind]]$inloc, result$tracks2[[iind]]$dir)
-##}
+#}
+
+#More detailed procedure is available in (https://github.com/vic-dragon/dmri.tracking)
+
+}
+\seealso{
+The tracking result from [v.track()] can be used for [tractography()]
 }

@@ -1,15 +1,16 @@
 Package: dmri.tracking
 Type: Package
-Title: Tracking algorithm from DiST 
+Title: DiST: Diffusion Direction Smoothing and Tracking
 Version: 0.1.0
-Authors@R: person("Seungyong", "Hwang", email="syhwang@ucdavis.edu", role=c("aut", "cre"))
-Description: This package is mainly for making tractography with deterministic tracking algorithm from Raymond et al. 2016.
-License: GPL-3
+Depends: R (>= 3.5.0)
+Authors@R: c(person("Seungyong", "Hwang", email="syhwang@ucdavis.edu", role=c("aut", "cre")),
+            person("Raymond", "Wong", email="raywong@tamu.edu", role=c("aut")))
+Description: This package provides functions to apply the deterministic tracking algorithm and to plotting tractography result.
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Imports: rgl
 RoxygenNote: 7.1.1
-Depends: R (>= 3.5.0)
 Suggests: 
     rmarkdown,
     knitr,
