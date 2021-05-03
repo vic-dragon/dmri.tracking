@@ -49,7 +49,7 @@
 #'
 #'  Result of deterministic tracking algorithm
 #' \itemize{
-#'  \item{v.obj:} Input of \code{\link[dmri.tracking]{v.track}}
+#'  \item{v.obj:} Input of [v.track()]
 #'  \item{track1, track2:} A list containing the reconstructed fiber information
 #'  \itemize{
 #'   \item{inloc:} The voxel coordinates that the reconstructed fiber went through
