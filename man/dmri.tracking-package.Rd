@@ -6,7 +6,15 @@
 \alias{dmri.tracking-package}
 \title{dmri.tracking: DiST: Diffusion Direction Smoothing and Tracking}
 \description{
-This package provides functions to apply the deterministic tracking algorithm and to plotting tractography result.
+This package provides functions to apply the deterministic tracking algorithm and to plot tractography result.
+}
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://github.com/vic-dragon/dmri.tracking}
+  \item Report bugs at \url{https://github.com/vic-dragon/dmri.tracking/issues}
+}
+
 }
 \author{
 \strong{Maintainer}: Seungyong Hwang \email{syhwang@ucdavis.edu}

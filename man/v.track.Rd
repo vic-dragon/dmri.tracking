@@ -2,7 +2,7 @@
 % Please edit documentation in R/dmri.tracking.R
 \name{v.track}
 \alias{v.track}
-\title{Deterministic tracking algorithm from DiST by Wong et al.(2016)}
+\title{Deterministic tracking algorithm, DiST}
 \usage{
 v.track(
   v.obj,
@@ -14,39 +14,40 @@ v.track(
 )
 }
 \arguments{
-\item{v.obj}{The list type of object from the peak detection algorithm. The object should contain the following components.
+\item{v.obj}{An list type object which contains the following components.
 \itemize{
- \item{vec:} Estimated peak direction.
- \item{loc:} Coordinates in braingrid for each estimated peak direction.
- \item{map:} Indicator of voxel for each estimated peak direction
- \item{rmap:} Starting location in map of each voxel
- \item{n.fiber:} Number of detected peaks at each voxel
- \item{n.fiber2:} Number of detected peaks corresponding to map
- \item{braingrid:} Normalized voxel coordinates based on the number of voxel and the size of each axis.
- \item{xgrid.sp,ygrid.sp,zgrid.sp: } Voxel size of x, y, z-axis, respectively. (e.g. Voxel size in HCP dMRI: 1.25mm * 1.25mm * 1.25mm)
+ \item{vec:} A matrix containing the estimated peak directions.
+ \item{loc:} A matrix containing the 'braingrid' coordinates of the corresponding estimated peak direction.
+ \item{map:} A vector containing the voxel indicator of corresponding estimated peak direction.
+ \item{rmap:} A vector specifying the location in 'map' of each voxel.
+ \item{n.fiber:} A vector specifying the number of peaks at each voxel.
+ \item{n.fiber2:} A vector specifying the number of peaks corresponding to 'map'
+ \item{braingrid:} A array specifying the normalized voxel coordinates.
+ \item{xgrid.sp,ygrid.sp,zgrid.sp: } A numeric value specifying the voxel size in x, y, z-axis, respectively. (e.g. Voxel size in HCP dMRI: 1.25mm * 1.25mm * 1.25mm)
 }}
 
-\item{max.line}{Maximum number of voxels that the reconstructed fibers can go through}
+\item{max.line}{A integer value specifying the maximum number of voxels that the reconstructed fibers can go through}
 
-\item{nproj}{Considered number of neighborhood voxels if the algorithm cannot find no viable direction nearby.}
+\item{nproj}{A integer value specifying the number of neighborhood voxels if the algorithm cannot find no viable direction nearby.}
 
-\item{elim}{Choice of whether the reconstructed fiber is removed from the result if the length is less than elim.thres.}
+\item{elim}{logical. If TRUE, 'sorted.update.ind' returns whether the reconstructed fiber is greater than 'elim.thres'}
 
-\item{elim.thres}{If elim=TRUE, a lower limit of the reconstructed fiber length.}
+\item{elim.thres}{A numeric value specifying the lower limit length of reconstructed fibers.}
 
-\item{thres.ang}{Threshold to determine whether the destination voxel have a viable direction. (default value: pi/6). That is,
-the algorithm is proceeded, if the angular difference of the diffusion direction between the previous voxel and the destination voxel is smaller than thres.ang}
-}
-\value{
-Result of deterministic tracking algorithm
+\item{thres.ang}{A numeric value specifying the threshold to determine whether the destination voxel have a viable direction. (default value: pi/6). That is,
+the algorithm is proceeded, if the angular difference of the diffusion direction between the previous voxel and the destination voxel is smaller than 'thres.ang'
+
+ @return
+
+ Result of deterministic tracking algorithm
 \itemize{
- \item{v.obj:} Input of tracking algorithm.
- \item{track1, track2:} reconstructed fiber information
+ \item{v.obj:} Input of \code{\link{v.track}}
+ \item{track1, track2:} A list containing the reconstructed fiber information
  \itemize{
   \item{inloc:} The voxel coordinates that the reconstructed fiber went through
   \item{dir:} The diffusion direction that used to reconstruct fiber
   \item{iinds:} The indicator of voxel that the reconstructed fiber went through
-  \item{change:} Indicator that which voxel could not pass the angular difference threshold (thres.ang)
+  \item{change:} logical, If TRUE, that voxel pass the angular difference threshold (thres.ang)
   \item{pvox:} The passed voxel
   \item{pdir:} The passed direction
   \item{pdis:} The length of fiber between the passed information and the previous one.
@@ -57,11 +58,12 @@ Result of deterministic tracking algorithm
  \item{lens:} The reconstructed fiber lengths.
  \item{sorted.iinds:} The ordered reconstructed fibers
  \item{sorted.update.ind:} Whether the reconstructed fiber is greater than elim.thres
-}
+}}
 }
 \description{
-v.track applies the deterministic tracking algorithm, DiST, to reconstruct neuronal fibers based on the peak detection results.
-Peak detection algorithm can be found in (github.com/vic-dragon/BJS/example_scripts/example_HCP_analysis.py)
+v.track is used to apply the deterministic tracking algorithm, DiST.
+It can be used to carry out the neuronal fiber reconstruction based on the peak detection results with local fiber estimation.
+Peak detection algorithm can be found in \href{https://github.com/vic-dragon/BJS/tree/master/example_scripts/example_HCP_analysis.py}{github-repository}
 }
 \examples{
 #Load example output from peak detection algorithm
@@ -88,5 +90,5 @@ Peak detection algorithm can be found in (github.com/vic-dragon/BJS/example_scri
 
 }
 \seealso{
-[tractography()] for plotting tractography based on the tracking result from [v.track()]
+\code{\link{tractography}} for plotting tractography based on the tracking result from \code{\link{v.track}}
 }

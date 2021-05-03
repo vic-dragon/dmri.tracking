@@ -21,37 +21,41 @@
 
 # vorient: if the voxel orientation does not match the physical orientation, make it -1
 
-#' Deterministic tracking algorithm from DiST by Wong et al.(2016)
+#' Deterministic tracking algorithm, DiST
 #'
-#' v.track applies the deterministic tracking algorithm, DiST, to reconstruct neuronal fibers based on the peak detection results.
-#' Peak detection algorithm can be found in (github.com/vic-dragon/BJS/example_scripts/example_HCP_analysis.py)
+#' v.track is used to apply the deterministic tracking algorithm, DiST.
+#' It can be used to carry out the neuronal fiber reconstruction based on the peak detection results with local fiber estimation.
+#' Peak detection algorithm can be found in \href{https://github.com/vic-dragon/BJS/tree/master/example_scripts/example_HCP_analysis.py}{github-repository}
 #'
-#' @param v.obj The list type of object from the peak detection algorithm. The object should contain the following components.
+#' @param v.obj An list type object which contains the following components.
 #' \itemize{
-#'  \item{vec:} Estimated peak direction.
-#'  \item{loc:} Coordinates in braingrid for each estimated peak direction.
-#'  \item{map:} Indicator of voxel for each estimated peak direction
-#'  \item{rmap:} Starting location in map of each voxel
-#'  \item{n.fiber:} Number of detected peaks at each voxel
-#'  \item{n.fiber2:} Number of detected peaks corresponding to map
-#'  \item{braingrid:} Normalized voxel coordinates based on the number of voxel and the size of each axis.
-#'  \item{xgrid.sp,ygrid.sp,zgrid.sp: } Voxel size of x, y, z-axis, respectively. (e.g. Voxel size in HCP dMRI: 1.25mm * 1.25mm * 1.25mm)
+#'  \item{vec:} A matrix containing the estimated peak directions.
+#'  \item{loc:} A matrix containing the 'braingrid' coordinates of the corresponding estimated peak direction.
+#'  \item{map:} A vector containing the voxel indicator of corresponding estimated peak direction.
+#'  \item{rmap:} A vector specifying the location in 'map' of each voxel.
+#'  \item{n.fiber:} A vector specifying the number of peaks at each voxel.
+#'  \item{n.fiber2:} A vector specifying the number of peaks corresponding to 'map'
+#'  \item{braingrid:} A array specifying the normalized voxel coordinates.
+#'  \item{xgrid.sp,ygrid.sp,zgrid.sp: } A numeric value specifying the voxel size in x, y, z-axis, respectively. (e.g. Voxel size in HCP dMRI: 1.25mm * 1.25mm * 1.25mm)
 #' }
-#' @param max.line Maximum number of voxels that the reconstructed fibers can go through
-#' @param nproj Considered number of neighborhood voxels if the algorithm cannot find no viable direction nearby.
-#' @param elim Choice of whether the reconstructed fiber is removed from the result if the length is less than elim.thres.
-#' @param elim.thres If elim=TRUE, a lower limit of the reconstructed fiber length.
-#' @param thres.ang Threshold to determine whether the destination voxel have a viable direction. (default value: pi/6). That is,
-#' the algorithm is proceeded, if the angular difference of the diffusion direction between the previous voxel and the destination voxel is smaller than thres.ang
-#' @return Result of deterministic tracking algorithm
+#' @param max.line A integer value specifying the maximum number of voxels that the reconstructed fibers can go through
+#' @param nproj A integer value specifying the number of neighborhood voxels if the algorithm cannot find no viable direction nearby.
+#' @param elim logical. If TRUE, 'sorted.update.ind' returns whether the reconstructed fiber is greater than 'elim.thres'
+#' @param elim.thres  A numeric value specifying the lower limit length of reconstructed fibers.
+#' @param thres.ang A numeric value specifying the threshold to determine whether the destination voxel have a viable direction. (default value: pi/6). That is,
+#' the algorithm is proceeded, if the angular difference of the diffusion direction between the previous voxel and the destination voxel is smaller than 'thres.ang'
+#'
+#'  @return
+#'
+#'  Result of deterministic tracking algorithm
 #' \itemize{
-#'  \item{v.obj:} Input of tracking algorithm.
-#'  \item{track1, track2:} reconstructed fiber information
+#'  \item{v.obj:} Input of \code{\link{v.track}}
+#'  \item{track1, track2:} A list containing the reconstructed fiber information
 #'  \itemize{
 #'   \item{inloc:} The voxel coordinates that the reconstructed fiber went through
 #'   \item{dir:} The diffusion direction that used to reconstruct fiber
 #'   \item{iinds:} The indicator of voxel that the reconstructed fiber went through
-#'   \item{change:} Indicator that which voxel could not pass the angular difference threshold (thres.ang)
+#'   \item{change:} logical, If TRUE, that voxel pass the angular difference threshold (thres.ang)
 #'   \item{pvox:} The passed voxel
 #'   \item{pdir:} The passed direction
 #'   \item{pdis:} The length of fiber between the passed information and the previous one.
@@ -63,7 +67,7 @@
 #'  \item{sorted.iinds:} The ordered reconstructed fibers
 #'  \item{sorted.update.ind:} Whether the reconstructed fiber is greater than elim.thres
 #' }
-#' @seealso [tractography()] for plotting tractography based on the tracking result from [v.track()]
+#' @seealso \code{\link{tractography}} for plotting tractography based on the tracking result from \code{\link{v.track}}
 #'
 #' @examples
 #' #Load example output from peak detection algorithm
@@ -492,11 +496,11 @@ proceed <- function(vox0, dir0, eig, rmap, n.fiber, thres.ang=0.5235988){
 #' Visualize the result from v.track into 3D object.
 #' rgl package is required.
 #'
-#' @param loc The list of voxel coordinates that the selected reconstructed fiber went through
-#' @param vec The list of diffusion direction that used to reconstruct a fiber
+#' @param loc Voxel coordinates that the selected reconstructed fiber went through
+#' @param vec Diffusion direction that used to reconstruct a fiber
 #'
 #'
-#'@seealso The tracking result from [v.track()] can be used for [tractography()]
+#'@seealso The tracking result from \code{\link{v.track}} can be used for \code{\link{tractography}}
 #'
 #'
 #' @examples

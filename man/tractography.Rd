@@ -7,9 +7,9 @@
 tractography(loc, vec)
 }
 \arguments{
-\item{loc}{The list of voxel coordinates that the selected reconstructed fiber went through}
+\item{loc}{Voxel coordinates that the selected reconstructed fiber went through}
 
-\item{vec}{The list of diffusion direction that used to reconstruct a fiber}
+\item{vec}{Diffusion direction that used to reconstruct a fiber}
 }
 \description{
 Visualize the result from v.track into 3D object.
@@ -40,5 +40,5 @@ rgl package is required.
 
 }
 \seealso{
-The tracking result from [v.track()] can be used for [tractography()]
+The tracking result from \code{\link{v.track}} can be used for \code{\link{tractography}}
 }

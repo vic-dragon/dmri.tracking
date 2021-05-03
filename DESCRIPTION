@@ -5,8 +5,11 @@ Version: 0.1.0
 Depends: R (>= 3.5.0)
 Authors@R: c(person("Seungyong", "Hwang", email="syhwang@ucdavis.edu", role=c("aut", "cre")),
             person("Raymond", "Wong", email="raywong@tamu.edu", role=c("aut")))
-Description: This package provides functions to apply the deterministic tracking algorithm and to plotting tractography result.
+Maintainer: Seungyong Hwang <syhwang@ucdavis.edu>
+Description: This package provides functions to apply the deterministic tracking algorithm and to plot tractography result.
 License: MIT + file LICENSE
+URL: https://github.com/vic-dragon/dmri.tracking
+BugReports: https://github.com/vic-dragon/dmri.tracking/issues
 Encoding: UTF-8
 LazyData: true
 Imports: rgl
