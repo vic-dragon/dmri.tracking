@@ -89,6 +89,13 @@ Peak detection algorithm can be found in \href{https://github.com/vic-dragon/BJS
 #More detailed procedure is available in (https://github.com/vic-dragon/dmri.tracking)
 
 }
+\references{
+R. K. W. Wong, T. C. M. Lee, D. Paul, J. Peng and for the Alzheimer's Disease Neuroimaging Initiative. (2016)
+"Fiber Direction Estimation, Smoothing and Tracking in Diffusion MRI". The Annals of Applied Statistics, 10(3), 1137-1156.
+}
 \seealso{
 \code{\link{tractography}} for plotting tractography based on the tracking result from \code{\link{v.track}}
+}
+\author{
+The detailed information of the deterministic tracking algorithm can be found in Wong et al (2016)
 }
