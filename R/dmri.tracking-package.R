@@ -1,3 +1,6 @@
+#' This package contains the fllowing functions
+#' \code{\link[dmri.tracking]{v.track}}
+#' \code{\link[dmri.tracking]{tractography}}
 #' @keywords internal
 "_PACKAGE"
 
