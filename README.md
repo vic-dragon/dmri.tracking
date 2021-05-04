@@ -24,8 +24,13 @@ install.packages("dmri.tracking")
 And the development version from [GitHub](https://github.com/) with:
 
 ``` r
-# install.packages("devtools")
-devtools::install_github("vic-dragon/dmri.tracking")
+devtools::install_github("vic-dragon/dmri.tracking") 
+```
+
+If the above command does not work, try the following command
+
+``` r
+remotes::install_github("vic-dragon/dmri.tracking@main")
 ```
 
 ## Example
