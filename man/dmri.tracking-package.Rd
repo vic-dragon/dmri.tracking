@@ -22,6 +22,7 @@ Useful links:
 Authors:
 \itemize{
   \item Raymond Wong \email{raywong@tamu.edu}
+  \item Seungyong Hwang \email{syhwang@ucdavis.edu}
 }
 
 }

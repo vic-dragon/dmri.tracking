@@ -67,8 +67,8 @@
 #'  \item{sorted.iinds:} The ordered reconstructed fibers
 #'  \item{sorted.update.ind:} Whether the reconstructed fiber is greater than elim.thres
 #' }
-#' @seealso \code{\link{tractography}} for plotting tractography based on the tracking result from \code{\link{v.track}}
-#' @author The detailed information of the deterministic tracking algorithm can be found in Wong et al (2016)
+#' @seealso \code{\link{tractography}} for plotting tractography based on the tracking result from \code{\link{v.track}} in \code{\link{dmri.tracking}} package.
+#' @author Raymond Wong, Seungyong Hwang
 #' @references
 #' R. K. W. Wong, T. C. M. Lee, D. Paul, J. Peng and for the Alzheimer's Disease Neuroimaging Initiative. (2016)
 #' "Fiber Direction Estimation, Smoothing and Tracking in Diffusion MRI". The Annals of Applied Statistics, 10(3), 1137-1156.
@@ -503,8 +503,8 @@ proceed <- function(vox0, dir0, eig, rmap, n.fiber, thres.ang=0.5235988){
 #' @param vec Diffusion direction that used to reconstruct a fiber
 #'
 #'
-#' @seealso The tracking result from \code{\link{v.track}} can be used for \code{\link{tractography}}
-#' @author The detailed information of the deterministic tracking algorithm can be found in Wong et al (2016)
+#' @seealso The tracking result from \code{\link{v.track}} can be used for \code{\link{tractography}} in \code{\link{dmri.tracking}} package.
+#' @author Raymond Wong, Seungyong Hwang
 #' @references
 #' R. K. W. Wong, T. C. M. Lee, D. Paul, J. Peng and for the Alzheimer's Disease Neuroimaging Initiative. (2016)
 #' "Fiber Direction Estimation, Smoothing and Tracking in Diffusion MRI". The Annals of Applied Statistics, 10(3), 1137-1156.

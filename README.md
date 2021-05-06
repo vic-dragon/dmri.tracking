@@ -10,8 +10,9 @@ status](https://ci.appveyor.com/api/projects/status/github/vic-dragon/dmri.track
 <!-- badges: end -->
 
 The goal of dmri.tracking is to apply the deterministic tracking
-algorithm from DiST (Raymond et al. 2016) and to visualize the tracking
-result.
+algorithm from DiST [(Wong et
+al. 2016)](https://projecteuclid.org/journals/annals-of-applied-statistics/volume-10/issue-3/Fiber-direction-estimation-smoothing-and-tracking-in-diffusion-MRI/10.1214/15-AOAS880.full)
+and to visualize the tracking result.
 
 ## Installation
 
@@ -32,6 +33,13 @@ If the above command does not work, try the following command
 ``` r
 remotes::install_github("vic-dragon/dmri.tracking@main")
 ```
+
+## Main Functions
+
+  - **v.track()** : Apply deterministic tracking algorithm, DiST
+
+  - **tractography()** : Plot the tractography based on the result from
+    **v.track()**
 
 ## Example
 
@@ -191,3 +199,7 @@ for (iind in (track_result$sorted.iinds[track_result$sorted.update.ind])){
 ```
 
 ![Tractography Result](man/figures/tracking_result.png)
+
+##### Maintainer: Seungyong Hwang (<syhwang@ucdavis.edu>)
+
+##### Author: Raymond Wong, Seungyong Hwang

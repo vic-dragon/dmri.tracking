@@ -4,7 +4,8 @@ Title: DiST: Diffusion Direction Smoothing and Tracking
 Version: 0.1.0
 Depends: R (>= 3.5.0)
 Authors@R: c(person("Seungyong", "Hwang", email="syhwang@ucdavis.edu", role=c("aut", "cre")),
-            person("Raymond", "Wong", email="raywong@tamu.edu", role=c("aut")))
+            person("Raymond", "Wong", email="raywong@tamu.edu", role=c("aut")),
+            person("Seungyong", "Hwang", email="syhwang@ucdavis.edu", role=c("aut")))
 Maintainer: Seungyong Hwang <syhwang@ucdavis.edu>
 Description: This package provides functions to apply the deterministic tracking algorithm and to plot tractography result.
 License: MIT + file LICENSE
