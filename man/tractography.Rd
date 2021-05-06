@@ -7,16 +7,16 @@
 tractography(loc, vec)
 }
 \arguments{
-\item{loc}{Voxel coordinates that the selected reconstructed fiber went through}
+\item{loc}{Voxel coordinates that the reconstructed fiber go through}
 
-\item{vec}{Diffusion direction that used to reconstruct a fiber}
+\item{vec}{Diffusion direction that used to reconstruct the fiber}
 }
 \description{
-Visualize the result from v.track into 3D object.
-rgl package is required.
+Visualize the result from v.track.
+r package \code{\link{rgl}} is required.
 }
 \examples{
-#Load example output from peak detection algorithm
+#Load an example output from the peak detection algorithm
 #load(system.file("extdata", "peakresult.rda", package = "dmri.tracking"))
 
 #str(peak.result)  #Output from the peak detection algorithm
@@ -25,8 +25,7 @@ rgl package is required.
 #result = v.track(v.obj = peak.result, max.line=500)
 
 
-#To plot the tractography based on the previous tracking result,
-#comment out the following lines and run them.
+#Plot tracking result.
 
 #library(rgl)
 #open3d()
@@ -36,7 +35,7 @@ rgl package is required.
 #  tractography(result$tracks2[[iind]]$inloc, result$tracks2[[iind]]$dir)
 #}
 
-#More detailed procedure is available in (https://github.com/vic-dragon/dmri.tracking)
+#An example to prepare v.obj is available in https://github.com/vic-dragon/dmri.tracking
 
 }
 \references{
@@ -47,5 +46,5 @@ R. K. W. Wong, T. C. M. Lee, D. Paul, J. Peng and for the Alzheimer's Disease Ne
 The tracking result from \code{\link{v.track}} can be used for \code{\link{tractography}} in \code{\link{dmri.tracking}} package.
 }
 \author{
-Raymond Wong, Seungyong Hwang
+Raymond Wong, Seungyong Hwang (Maintainer: \email{syhwang@ucdavis.edu})
 }
