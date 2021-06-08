@@ -4,9 +4,9 @@
 \name{dmri.tracking-package}
 \alias{dmri.tracking}
 \alias{dmri.tracking-package}
-\title{dmri.tracking: DiST -- Diffusion Direction Smoothing and Tracking}
+\title{dmri.tracking: DiST - Diffusion Direction Smoothing and Tracking}
 \description{
-This package provides functions to apply the deterministic tracking algorithm --  DiST and to plot tractography results.
+It provides functions to apply the deterministic tracking algorithm - DiST (Wong et al 2016) <doi:10.1214/15-AOAS880> and to plot tractography results.
 }
 \seealso{
 Useful links:

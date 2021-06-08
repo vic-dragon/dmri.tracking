@@ -25,7 +25,7 @@
 #'
 #' v.track is used to apply the deterministic tracking algorithm -- DiST (Wong et al 2017)
 #' It can be used to carry out the neuronal fiber reconstruction based on the peak detection results with local fiber estimation.
-#' Peak detection algorithm can be found in \href{https://github.com/vic-dragon/BJS/tree/master/example_scripts/example_HCP_analysis.py}{github-repository}
+#' Peak detection algorithm can be found in example_HCP_analysis.py from \href{https://github.com/vic-dragon/BJS/tree/master/example_scripts/}{github-repository}
 #'
 #' @param v.obj An list type object which contains the following components:
 #' \itemize{
