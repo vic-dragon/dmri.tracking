@@ -75,24 +75,24 @@
 #' "Fiber Direction Estimation, Smoothing and Tracking in Diffusion MRI". The Annals of Applied Statistics, 10(3), 1137-1156.
 #' @examples
 #' #Load an example output from the peak detection algorithm
-#' #load(system.file("extdata", "peakresult.rda", package = "dmri.tracking"))
+#' load(system.file("extdata", "peakresult.rda", package = "dmri.tracking"))
 #'
-#' #str(peak.result)  #Output from the peak detection algorithm
+#' str(peak.result)  #Output from the peak detection algorithm
 #'
 #' #Apply Tracking algorithm
-#' #result = v.track(v.obj = peak.result, max.line=500)
+#' result = v.track(v.obj = peak.result, max.line=500)
 #'
 #'
 #' #Plot tracking result.
-#'
-#' #library(rgl)
-#' #open3d()
-#' #for (iind in (result$sorted.iinds[result$sorted.update.ind])){
-#' #  cat(iind,"\n")
-#' #  tractography(result$tracks1[[iind]]$inloc, result$tracks1[[iind]]$dir)
-#' #  tractography(result$tracks2[[iind]]$inloc, result$tracks2[[iind]]$dir)
-#' #}
-#'
+#' \donttest{
+#' library(rgl)
+#' open3d()
+#' for (iind in (result$sorted.iinds[result$sorted.update.ind])){
+#'   cat(iind,"\n")
+#'   tractography(result$tracks1[[iind]]$inloc, result$tracks1[[iind]]$dir)
+#'   tractography(result$tracks2[[iind]]$inloc, result$tracks2[[iind]]$dir)
+#' }
+#' }
 #' #An example to prepare v.obj is available in https://github.com/vic-dragon/dmri.tracking
 #'
 #' @export
@@ -506,30 +506,33 @@ proceed <- function(vox0, dir0, eig, rmap, n.fiber, thres.ang=0.5235988){
 #'
 #' @author Raymond Wong, Seungyong Hwang (Maintainer: \email{syhwang@@ucdavis.edu})
 #'
+#' @return
+#' No return value. The reconstructed fiber is visualized on the opened rgl window.
+#'
 #' @references
 #' R. K. W. Wong, T. C. M. Lee, D. Paul, J. Peng and for the Alzheimer's Disease Neuroimaging Initiative. (2016)
 #' "Fiber Direction Estimation, Smoothing and Tracking in Diffusion MRI". The Annals of Applied Statistics, 10(3), 1137-1156.
 #'
 #' @examples
 #' #Load an example output from the peak detection algorithm
-#' #load(system.file("extdata", "peakresult.rda", package = "dmri.tracking"))
+#' load(system.file("extdata", "peakresult.rda", package = "dmri.tracking"))
 #'
-#' #str(peak.result)  #Output from the peak detection algorithm
+#' str(peak.result)  #Output from the peak detection algorithm
 #'
 #' #Apply Tracking algorithm
-#' #result = v.track(v.obj = peak.result, max.line=500)
+#' result = v.track(v.obj = peak.result, max.line=500)
 #'
 #'
 #' #Plot tracking result.
-#'
-#' #library(rgl)
-#' #open3d()
-#' #for (iind in (result$sorted.iinds[result$sorted.update.ind])){
-#' #  cat(iind,"\n")
-#' #  tractography(result$tracks1[[iind]]$inloc, result$tracks1[[iind]]$dir)
-#' #  tractography(result$tracks2[[iind]]$inloc, result$tracks2[[iind]]$dir)
-#' #}
-#'
+#' \donttest{
+#' library(rgl)
+#' open3d()
+#' for (iind in (result$sorted.iinds[result$sorted.update.ind])){
+#'   cat(iind,"\n")
+#'   tractography(result$tracks1[[iind]]$inloc, result$tracks1[[iind]]$dir)
+#'   tractography(result$tracks2[[iind]]$inloc, result$tracks2[[iind]]$dir)
+#' }
+#' }
 #' #An example to prepare v.obj is available in https://github.com/vic-dragon/dmri.tracking
 #'
 #' @export
@@ -620,7 +623,7 @@ get.fib.col <- function(vecs)
 #' @param zrange zrange
 #'
 #' @useDynLib dmri.tracking ArrayIndex_C
-#' @export
+#' @noRd
 ArrayIndex <- function(dims, xrange, yrange, zrange)
 {
   return(.Call("ArrayIndex_C", dims, xrange, yrange, zrange, PACKAGE="dmri.tracking"))

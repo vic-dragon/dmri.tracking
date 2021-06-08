@@ -11,30 +11,33 @@ tractography(loc, vec)
 
 \item{vec}{Diffusion direction that used to reconstruct the fiber}
 }
+\value{
+No return value. The reconstructed fiber is visualized on the opened rgl window.
+}
 \description{
 Visualize the result from v.track.
 r package \code{\link{rgl}} is required.
 }
 \examples{
 #Load an example output from the peak detection algorithm
-#load(system.file("extdata", "peakresult.rda", package = "dmri.tracking"))
+load(system.file("extdata", "peakresult.rda", package = "dmri.tracking"))
 
-#str(peak.result)  #Output from the peak detection algorithm
+str(peak.result)  #Output from the peak detection algorithm
 
 #Apply Tracking algorithm
-#result = v.track(v.obj = peak.result, max.line=500)
+result = v.track(v.obj = peak.result, max.line=500)
 
 
 #Plot tracking result.
-
-#library(rgl)
-#open3d()
-#for (iind in (result$sorted.iinds[result$sorted.update.ind])){
-#  cat(iind,"\n")
-#  tractography(result$tracks1[[iind]]$inloc, result$tracks1[[iind]]$dir)
-#  tractography(result$tracks2[[iind]]$inloc, result$tracks2[[iind]]$dir)
-#}
-
+\donttest{
+library(rgl)
+open3d()
+for (iind in (result$sorted.iinds[result$sorted.update.ind])){
+  cat(iind,"\n")
+  tractography(result$tracks1[[iind]]$inloc, result$tracks1[[iind]]$dir)
+  tractography(result$tracks2[[iind]]$inloc, result$tracks2[[iind]]$dir)
+}
+}
 #An example to prepare v.obj is available in https://github.com/vic-dragon/dmri.tracking
 
 }
