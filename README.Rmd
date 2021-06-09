@@ -27,7 +27,10 @@ The goal of dmri.tracking is to apply the deterministic tracking algorithm from 
 ##### Authors: Raymond Wong, Seungyong Hwang
 
 ## Installation
-
+You can install the package from CRAN with:
+``` r
+install.packages('dmri.tracking')
+```
 You can install the development version from [GitHub](https://github.com/) with:
 ``` r
 devtools::install_github("vic-dragon/dmri.tracking") 

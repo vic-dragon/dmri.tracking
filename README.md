@@ -20,6 +20,12 @@ and to visualize the tracking result.
 
 ## Installation
 
+You can install the package from CRAN with:
+
+``` r
+install.packages('dmri.tracking')
+```
+
 You can install the development version from
 [GitHub](https://github.com/) with:
 
