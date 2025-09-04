@@ -1,0 +1,13 @@
+^.*\.Rproj$
+^\.Rproj\.user$
+^\.git$
+^\.github$
+^\.gitignore$
+^README\.md$
+^README\.Rmd$
+^LICENSE\.md$
+^\.DS_Store$
+^\.vscode$
+^\.idea$
+^.*\.yml$
+
