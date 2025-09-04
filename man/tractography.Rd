@@ -16,7 +16,7 @@ No return value. The reconstructed fiber is visualized on the opened rgl window.
 }
 \description{
 Visualize the result from v.track.
-r package \code{\link{rgl}} is required.
+r package \code{\link[rgl]{rgl}} is required.
 }
 \examples{
 #Load an example output from the peak detection algorithm
